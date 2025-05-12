@@ -1,0 +1,43 @@
+{
+  "experiments": [
+    {
+      "algorithm": "flowupdating",
+      "logFile": "flowupdating1.txt",
+      "threadCount": 1,
+      "distribution": {
+        "type": "uniform",
+        "maxDelay": 1
+      },
+      "topology": {
+        "type": "userList",
+        "initialPeers": 3,
+        "totalPeers": 3,
+        "list": {
+          "0": [ 1, 2 ],
+          "1": [ 0, 2 ],
+          "2": [ 0, 1 ]
+        },
+        "maxMsgsRec": 1
+      },
+      "tests": 1,
+      "rounds": 30
+    },
+    {
+      "algorithm": "flowupdating",
+      "logFile": "flowupdating1.txt",
+      "threadCount": 30,
+      "distribution": {
+        "type": "uniform",
+        "maxDelay": 1
+      },
+      "topology": {
+        "type": "complete",
+        "initialPeers": 30,
+        "totalPeers": 30,
+        "maxMsgsRec": 1
+      },
+      "tests": 1,
+      "rounds": 300
+    }
+  ]
+}
