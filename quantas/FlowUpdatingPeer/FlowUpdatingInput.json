@@ -2,7 +2,7 @@
   "experiments": [
     {
       "algorithm": "flowupdating",
-      "logFile": "flowupdating1.txt",
+      "logFile": "flowupdating_user_list.txt",
       "threadCount": 1,
       "distribution": {
         "type": "uniform",
@@ -10,12 +10,13 @@
       },
       "topology": {
         "type": "userList",
-        "initialPeers": 3,
-        "totalPeers": 3,
+        "initialPeers": 4,
+        "totalPeers": 4,
         "list": {
-          "0": [ 1, 2 ],
-          "1": [ 0, 2 ],
-          "2": [ 0, 1 ]
+          "0": [ 2, 3 ],
+          "1": [ 2 ],
+          "2": [ 0, 1 ],
+          "3": [ 0 ]
         },
         "maxMsgsRec": 1
       },
@@ -24,7 +25,7 @@
     },
     {
       "algorithm": "flowupdating",
-      "logFile": "flowupdating1.txt",
+      "logFile": "flowupdating_complete.txt",
       "threadCount": 30,
       "distribution": {
         "type": "uniform",

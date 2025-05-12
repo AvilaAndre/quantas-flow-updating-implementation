@@ -1,5 +1,6 @@
 #include "FlowUpdatingPeer.hpp"
 #include <cstdlib>
+#include <string>
 #include <unordered_map>
 
 namespace quantas {
@@ -135,11 +136,10 @@ void FlowUpdatingPeer::endOfRound(
     const vector<FlowUpdatingPeer *> peers =
         reinterpret_cast<vector<FlowUpdatingPeer *> const &>(_peers);
 
-    if (lastRound()) {
-        for (const auto &peer : peers) {
-            LogWriter::getTestLog()["initialFlowsS"][std::to_string(peer->id())] =
-                peer->estimate(peer->initialFlows);
-        }
+    for (const auto &peer : peers) {
+        LogWriter::getTestLog()["round"][std::to_string(getRound())]
+                               ["estimates"][std::to_string(peer->id())] =
+                                   peer->estimate(peer->initialFlows);
     }
 }
 
